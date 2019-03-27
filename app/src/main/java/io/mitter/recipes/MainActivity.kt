@@ -1,4 +1,4 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,11 +6,8 @@ import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import com.jakewharton.rxbinding2.widget.textChanges
 import io.mitter.android.Mitter
 import io.mitter.android.error.model.base.ApiError
-import io.mitter.data.domain.user.User
 import io.mitter.models.mardle.messaging.Message
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus

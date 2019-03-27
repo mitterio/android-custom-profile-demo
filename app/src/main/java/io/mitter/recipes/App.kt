@@ -1,7 +1,6 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import android.app.Application
-import android.util.Log
 import io.mitter.android.Mitter
 import io.mitter.android.domain.model.MitterConfig
 import io.mitter.android.domain.model.UserAuth
@@ -65,7 +64,6 @@ class App : Application() {
             }
 
             override fun onTypingIndication(channelId: String, senderId: String) {
-                Log.d("MainAc", "Typing Indicator for $channelId by $senderId")
                 if (mitter.getUserId() != senderId) {
                     EventBus.getDefault().post(TypingIndicator())
                 }

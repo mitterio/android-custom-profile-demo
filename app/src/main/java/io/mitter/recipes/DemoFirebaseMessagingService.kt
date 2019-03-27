@@ -1,4 +1,4 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage

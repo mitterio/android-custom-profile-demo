@@ -1,4 +1,4 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

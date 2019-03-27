@@ -1,4 +1,4 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import org.junit.Test
 

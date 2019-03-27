@@ -1,4 +1,4 @@
-package io.mitter.typingindicators
+package io.mitter.recipes
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
