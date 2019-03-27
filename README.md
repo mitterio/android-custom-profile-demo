@@ -1,2 +1,3 @@
-# android-typing-indicator-demo
-Typing indicator demo project for Android
+
+# android-custom-profile-demo
+Custom Profile demo for Mitter.io using the Android SDK
