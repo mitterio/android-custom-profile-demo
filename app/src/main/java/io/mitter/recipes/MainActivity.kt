@@ -16,7 +16,7 @@ import org.greenrobot.eventbus.ThreadMode
 
 class MainActivity : AppCompatActivity() {
     private val channelId = "KNOqT-6GwKj-oVZG3-gws36"
-    private val messageList: MutableList<Any> = mutableListOf()
+    private val messageList: MutableList<Message> = mutableListOf()
     private lateinit var chatRecyclerViewAdapter: ChatRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mitter = (application as App).mitter
-        val channels = mitter.Channels()
         val messaging = mitter.Messaging()
         EventBus.getDefault().register(this)
 
@@ -51,22 +50,6 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        messageEditText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                channels.sendTypingIndicator(
-                    channelId = channelId
-                )
-            }
-        })
-
         sendButton?.setOnClickListener {
             messaging.sendTextMessage(
                 channelId = channelId,
@@ -88,20 +71,6 @@ class MainActivity : AppCompatActivity() {
     fun onNewMessage(message: Message) {
         messageList.add(message)
         chatRecyclerViewAdapter.notifyItemInserted(messageList.size - 1)
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onTypingIndication(typingIndicator: TypingIndicator) {
-        if (messageList.last() != "") {
-            messageList.add("")
-            chatRecyclerViewAdapter.notifyItemInserted(messageList.size - 1)
-            chatRecyclerView.scrollToPosition(messageList.size - 1)
-
-            Handler().postDelayed({
-                messageList.remove("")
-                chatRecyclerViewAdapter.notifyItemRemoved(messageList.size - 1)
-                chatRecyclerView.scrollToPosition(messageList.size - 1)
-            }, 3000)
-        }
+        chatRecyclerView.scrollToPosition(messageList.size - 1)
     }
 }

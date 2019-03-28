@@ -19,7 +19,7 @@ class App : Application() {
 
         val userAuth = UserAuth(
             userId = "XQQ8U-7JuFc-tPLON-AdGMl",
-            userAuthToken = "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6IlpPRTZ0ZGVsb29aaXdrTmEiLCJ1c2VydG9rZW4iOiJwdTRhMzFoN2N2ZGM5a3RqY3FkOXBoNXBzOSIsImFwcGxpY2F0aW9uSWQiOiJJenIzNy1WbTdUUy1VOGNJdS1zVnRxaiIsInVzZXJJZCI6IlhRUThVLTdKdUZjLXRQTE9OLUFkR01sIn0.aEygFwxhCvtHAiExAEl5xvQ97HVuuvo7MS5M7ijY7BpfAB_VIWpiGFQY_MImIjtTocy2P2IY14m-GSf3j_2JwA"
+            userAuthToken = "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6Ikt4anNsQ0tpazdWNmFuZ2YiLCJ1c2VydG9rZW4iOiI3ajMyNzg3a2I0NHJjcGtjdGFqMWxjdTFjZyIsImFwcGxpY2F0aW9uSWQiOiJJenIzNy1WbTdUUy1VOGNJdS1zVnRxaiIsInVzZXJJZCI6IlhRUThVLTdKdUZjLXRQTE9OLUFkR01sIn0.BWRK_QbvgdE3xfJtken4XEEtXUGaece85i-GRcQ88xNmbjlFB9zI-amTC5fR1i8w-_WXT0V__328SJeVDoWcNg"
         )
 
         val userAuth2 = UserAuth(
@@ -30,7 +30,7 @@ class App : Application() {
         mitter = Mitter(
             context = this,
             mitterConfig = mitterConfig,
-            userAuth = userAuth2
+            userAuth = userAuth
         )
 
         mitter.registerOnPushMessageReceivedListener(object : Mitter.OnPushMessageReceivedCallback {

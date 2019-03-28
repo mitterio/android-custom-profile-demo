@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "io.mitter.typingindicators"
+        applicationId "io.mitter.recipes"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
