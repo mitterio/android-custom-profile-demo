@@ -24,13 +24,13 @@ class App : Application() {
 
         val userAuth2 = UserAuth(
             userId = "VMCDv-czm5Z-nMDOJ-jJ67Y",
-            userAuthToken = "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6Ik5FMGg2OTJTM2FqMDRRQ3EiLCJ1c2VydG9rZW4iOiI5aWZmaWFpZjU2cGdrbnFxOXBmcjZlYnRhdSIsImFwcGxpY2F0aW9uSWQiOiJJenIzNy1WbTdUUy1VOGNJdS1zVnRxaiIsInVzZXJJZCI6IlZNQ0R2LWN6bTVaLW5NRE9KLWpKNjdZIn0.iAa8qbcra2WWtd-EoeddZfQKQAVgO1XSKP4_sYY4zjKLEPwjWtMY0uKbWgCiFDv-QWQx6VbOUWA2UxKz8DKAmw"
+            userAuthToken = "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJtaXR0ZXItaW8iLCJ1c2VyVG9rZW5JZCI6ImVMUzVEQ1kwYlBWV3dsUkoiLCJ1c2VydG9rZW4iOiI2YXNrazN1aHBlMmc0cDVlZmNhc21lMzFlbSIsImFwcGxpY2F0aW9uSWQiOiJJenIzNy1WbTdUUy1VOGNJdS1zVnRxaiIsInVzZXJJZCI6IlZNQ0R2LWN6bTVaLW5NRE9KLWpKNjdZIn0.1j3ceQwt_VERYkZAlet3U7QxiB56DiDJzxDeTlKBglz7Ygr62TT7os57KN13BZ-IHDRUOj24mqydc46AUFah7g"
         )
 
         mitter = Mitter(
             context = this,
             mitterConfig = mitterConfig,
-            userAuth = userAuth
+            userAuth = userAuth2
         )
 
         mitter.registerOnPushMessageReceivedListener(object : Mitter.OnPushMessageReceivedCallback {
