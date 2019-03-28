@@ -11,7 +11,8 @@ import kotlinx.android.synthetic.main.item_message_self.view.*
 
 class ChatRecyclerViewAdapter(
     private val messageList: List<Message>,
-    private val currentUserId: String
+    private val currentUserId: String,
+    private val otherUserProfilePhoto: String
 ) : RecyclerView.Adapter<ChatRecyclerViewAdapter.ViewHolder>() {
     private val MESSAGE_SELF_VIEW = 0
     private val MESSAGE_OTHER_VIEW = 1
@@ -39,7 +40,7 @@ class ChatRecyclerViewAdapter(
                 } else {
                     itemView?.otherMessageText?.text = textPayload
                     Glide.with(itemView.context)
-                        .load("https://static1.squarespace.com/static/53ed0e3ce4b0c296acaeae80/57f4d399440243d357b24ad7/5a4e04150d9297b75329123d/1515062399381/PLANTE-4058-Edit+Headshot+Photography+by+Tommy+Collier+Productions+Denver+Colorado+Headshots+Photographer.jpg?format=1500w")
+                        .load(otherUserProfilePhoto)
                         .circleCrop()
                         .into(itemView.senderImage)
                 }
