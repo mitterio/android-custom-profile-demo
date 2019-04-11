@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                     val messages = value.reversed()
 
                     users.getUserProfile(
-                        userId = "VMCDv-czm5Z-nMDOJ-jJ67Y",
+                        userId = "@amy",
                         onValueAvailableCallback = object : Mitter.OnValueAvailableCallback<EntityProfile> {
                             override fun onError(apiError: ApiError) {
 
