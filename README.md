@@ -24,7 +24,7 @@ After that, open your project using Android Studio and make following changes:
 
 Run this project using Android Studio on **2** or more devices/emulators and choose a user to login from the first screen that pops up.
 
-Click on the face icon beside the send button on the device/emulator running the app as the user **Amy** to add profile photo for Amy.
+Click the face icon beside the send button on the device/emulator running the app as the user **Amy** to add profile photo for Amy.
 
 Restart the apps on both devices/emulators and send messages from one user to another to see the custom profiles in action.
 
