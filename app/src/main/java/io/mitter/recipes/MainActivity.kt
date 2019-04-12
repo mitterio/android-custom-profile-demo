@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import io.mitter.android.Mitter
 import io.mitter.android.error.model.base.ApiError
+import io.mitter.data.domain.entity.Attribute
 import io.mitter.data.domain.entity.EntityProfile
 import io.mitter.models.mardle.messaging.Message
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,7 +19,7 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class MainActivity : AppCompatActivity() {
-    private val channelId = "KNOqT-6GwKj-oVZG3-gws36"
+    private val channelId = "064da1b0-5c54-11e9-8659-3f3b30df91eb"
     private val messageList: MutableList<Message> = mutableListOf()
     private lateinit var chatRecyclerViewAdapter: ChatRecyclerViewAdapter
 
@@ -53,15 +54,17 @@ class MainActivity : AppCompatActivity() {
                             }
 
                             override fun onValueAvailable(value: EntityProfile) {
-                                val profilePhotoAttribute = value.attributes.first {
-                                    it.key == "recipes.ProfilePhoto"
-                                }
+                                val profilePhotoAttribute = try {
+                                    value.attributes.first {
+                                        it.key == "recipes.ProfilePhoto"
+                                    }
+                                } catch(exception: NoSuchElementException) { null }
 
                                 messageList.addAll(messages)
                                 chatRecyclerViewAdapter = ChatRecyclerViewAdapter(
                                     messageList = messageList,
                                     currentUserId = mitter.getUserId(),
-                                    otherUserProfilePhoto = profilePhotoAttribute.value
+                                    otherUserProfilePhoto = profilePhotoAttribute?.value
                                 )
 
                                 chatRecyclerView?.adapter = chatRecyclerViewAdapter

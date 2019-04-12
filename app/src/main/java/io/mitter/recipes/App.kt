@@ -2,6 +2,7 @@ package io.mitter.recipes
 
 import android.app.Application
 import io.mitter.android.Mitter
+import io.mitter.android.domain.model.LoggingLevel
 import io.mitter.android.domain.model.MitterConfig
 import io.mitter.models.mardle.messaging.*
 import io.mitter.recipes.remote.ApiService
@@ -26,7 +27,8 @@ class App : Application() {
         apiService = retrofit.create(ApiService::class.java)
 
         val mitterConfig = MitterConfig(
-            applicationId = "Izr37-Vm7TS-U8cIu-sVtqj"
+            applicationId = "Izr37-Vm7TS-U8cIu-sVtqj",
+            loggingLevel = LoggingLevel.FULL
         )
 
         mitter = Mitter(
